@@ -80,7 +80,7 @@ const submit = () => {
         async (valid) => {
             if (valid) {
                 await axios.post('/adminapi/user/jwt', { username: userForm.username }).then(async res => {
-                    if (!res.data.data) {
+                    if (!res.data.data.length) {
                         const res1 = await upload("/adminapi/user/add", userForm)
                         if (res1.data) {
                             ElMessage.success("添加成功")

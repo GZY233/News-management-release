@@ -103,7 +103,7 @@ const UserController = {
     },
     jwt:async(req,res)=>{
         const {username} =req.body
-        const result = await UserService.jwt(username)
+        const result = await UserService.jwt(username)     
         res.send({
             ok:1,
             data:result,
